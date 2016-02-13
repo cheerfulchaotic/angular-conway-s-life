@@ -1,0 +1,5 @@
+  <div class=board>
+    <div class="row" ng-repeat='row in board track by $index'>
+      <div class="cell" ng-repeat='cell in row track by $index' ng-class="{alive:cell.is_alive, dead:!cell.is_alive}" ng-click="cell.is_alive = !cell.is_alive"></div>
+  	</div>
+  </div>
