@@ -4,23 +4,60 @@
   background-color: #333;
 }
 
+.game { 
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  width: 925px;
+  margin-left: 75px;
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 100px
+}
+
+.controls input {
+  width: 3em;
+}
+
+.controls button {
+  width: 100%;
+}
+
+.controls .timing {
+  display: flex;
+  flex-direction: column;
+}
+
+.controls .new-board{
+  display: flex;
+  flex-direction: column;
+}
+
 .board {
-  background-color: #333;
   padding: 5px;
-  width:700px;
-  margin-right: auto;
-  margin-left: auto;  
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 600px;
+  width: 600px;
 }
 
 .row {
-  height: 14px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex: 1 1 auto;
+  width: 100%;
 }
 
 .cell {
   border: solid #999 1px;
-  margin:1px;
-  height: 10px;
-  width: 10px;
+  margin:0px;
+  flex: 1 1 auto;
   display: inline-block;
 }
 
@@ -30,5 +67,9 @@
 
 .cell.dead {
   background-color: #CCC;
+}
+
+.about {
+  flex: 0 1 100px;
 }
 

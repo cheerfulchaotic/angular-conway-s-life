@@ -12,28 +12,33 @@
   <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
 <body>
-  <h1>Life (and variants)</h1>
-  <div ng-controller="gameStateController">
+  <h1>Conway's Game of Life</h1>
+  <div class=game ng-controller="gameStateController">
+    <div class="controls">
+      <div class="timing">
+        <h3>Progress</h3>
+        <button ng-click="iterateState(1,0)">Single step</button>
+        <button ng-click="toggle_play();">{{promise?'stop':'play'}}</button>
+        <label>number of steps: <input type="text" ng-model="steps"></input></label>
+        <label>milliseconds per step: <input type="text" ng-model="delay"></input></label>
+      </div>
+      <div class="new-board">
+        <h3>New Board</h3>
+        <button ng-click="create_board(50,50,0)">default/blank</button>
+        <button ng-click="create_board(rows,columns,density)">custom/random</button>
+        <label>rows: <input type="text" ng-model="rows"></input></label>
+        <label>columnns: <input type="text" ng-model="columns"></input></label>
+        <label>density: <input type="text" ng-model="density"></input></label>
+      </div>
+    </div>
     <life-board></life-board>
-    <div class="timing">
-      <label>number of steps: <input type="text" ng-model="steps"></input></label>
-      <label>milliseconds per step: <input type="text" ng-model="msec"></input></label>
-      <input type=submit value="advance" ng-click="iterateState(steps,msec);"></button>
+    <div class="about">
+      <h4>About</h4>
+      <p>This is an implementation of Conway's game of life.  You can manually toggle the state of any cell by clicking on it. </p>
+      <p>Due to processing and display limitations, no more than 200 rows or 200 columns will be included on the board, even when larger numbers are selected.</p>
     </div>
-    <div class="new-board">
-      <label>rows: <input type="text" ng-model="rows"></input></label>
-      <label>columnns: <input type="text" ng-model="columns"></input></label>
-      <label>density: <input type="text" ng-model="density"></input></label>
-      <input type=submit value="new board" ng-click="create_board(rows, columns, density);"></button>
-
-    </div>
-
   </div>
 
-  <div class="help">
-  </div>
-
-  <div>Angular seed app: v<span app-version></span></div>
 
   <!-- In production use:
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
