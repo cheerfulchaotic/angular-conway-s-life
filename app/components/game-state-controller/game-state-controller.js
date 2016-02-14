@@ -45,9 +45,9 @@ controller('gameStateController',['$scope','$timeout',function($scope,$timeout){
 
 	$scope.iterateState = function(steps,delay){
 		if(steps>0){
-			var next_board = [];
+			var next_board = new Array($scope.max_y);
 			$scope.board.forEach(function(element, index, array){
-				next_board[index] = [];
+				next_board[index] = new Array($scope.max_x);
 				element.forEach(function(inner_element, inner_index, inner_array){
 					next_board[index][inner_index] = {is_alive:live_next_round(index,inner_index)};
 				});
