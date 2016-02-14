@@ -27,6 +27,15 @@
   width: 100%;
 }
 
+.controls button + button {
+  margin-top: 10px;
+}
+
+.controls label {
+  display: flex;
+  flex-direction: column;
+}
+
 .controls .timing {
   display: flex;
   flex-direction: column;
